@@ -23,7 +23,7 @@ namespace ToDoList.Controllers
         }
 
         [HttpPost("/items")]
-        public ActionResult Create(string description)
+        public ActionResult Index(string description)
         {
             Item myitem = new Item(description);
             //list.addItem(item);
@@ -32,7 +32,20 @@ namespace ToDoList.Controllers
 
         }
 
-        
+        [HttpPost("/items/delete")]
+        public ActionResult DeleteAll()
+        {
+        Item.clearAllItems();
+        return View();
+        }
 
+        [HttpGet("/items/find")]
+        public ActionResult FindItem(int findId)
+        {
+             Item findItem = Item.Find(findId);
+            return View(findItem);
+        }
+
+       
     }
 }

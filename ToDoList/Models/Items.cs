@@ -4,13 +4,18 @@ namespace ToDoList.Models
     public class Item
     {
         private string description;
+        private int Id;
         private static List<Item> list = new List<Item>{};
 
-        
+        public Item()
+        {
+
+        }
         public Item(string description)
         {
             this.description = description;
             list.Add(this);
+            Id = list.Count;
             
         }
         public string getDescription()
@@ -36,6 +41,16 @@ namespace ToDoList.Models
         public string toString()
         {
             return "Item description is "+this.description;
+        }
+
+        public int getId()
+        {
+            return Id;
+        }
+
+        public static Item Find(int searchId)
+        {
+            return list[searchId-1];
         }
 
 

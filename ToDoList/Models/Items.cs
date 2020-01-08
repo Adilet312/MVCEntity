@@ -6,10 +6,7 @@ namespace ToDoList.Models
         private string description;
         private static List<Item> list = new List<Item>{};
 
-        public Item()
-        {
-            
-        }
+        
         public Item(string description)
         {
             this.description = description;
@@ -44,3 +41,41 @@ namespace ToDoList.Models
 
     }
 }
+
+
+
+
+
+
+
+
+//  namespace ToDoListItem.Models
+// {
+//     public class Item
+//     {
+//         private string description;
+
+//         public Item(string description)
+//         {
+//             this.description = description;
+            
+            
+//         }
+//         public string getDescription()
+//         {
+//             return this.description;
+//         }
+
+//         public void setDescription(string new_des)
+//         {
+//             this.description = new_des;
+//         }
+
+//         public string toString()
+//         {
+//             return "Item is  "+this.description;
+//         }
+
+
+//     }
+// }

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ToDoList.Models;
 using System.Collections.Generic;
+using MySql.Data.MySqlClient;
 
 namespace ToDoList.Controllers
 {
@@ -23,9 +24,9 @@ namespace ToDoList.Controllers
         }
 
         [HttpPost("/items")]
-        public ActionResult Index(string description)
+        public ActionResult Index(string description,int id)
         {
-            Item myitem = new Item(description);
+            Item myitem = new Item(description,id);
             //list.addItem(item);
 
             return RedirectToAction("Index");
@@ -35,8 +36,8 @@ namespace ToDoList.Controllers
         [HttpPost("/items/delete")]
         public ActionResult DeleteAll()
         {
-        Item.clearAllItems();
-        return View();
+            Item.clearAllItems();
+            return View();
         }
 
         [HttpGet("/items/find")]

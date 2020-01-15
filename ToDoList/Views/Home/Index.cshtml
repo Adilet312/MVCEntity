@@ -1,14 +1,13 @@
-<!DOCTYPE html>
+@* <!DOCTYPE html>
 <html>
     <head>
         <meta charset='utf-8'>
         <title>Create a Custom ToDoList!</title>
         <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
     </head>
-    <body>
+    <body> *@
         <h1>Welcome ToDoList Project.</h1>
 
-        <a href='/items/new'>Add my item.</a><br>
-        <a href='/items'>See my list of items.</a>
-    </body>
-</html>
+        <p>@Html.ActionLink("See all items", "Index", "Items")</p> 
+    @* </body>
+</html> *@
